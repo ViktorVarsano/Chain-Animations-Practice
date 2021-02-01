@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="launch_preview" translatesAutoresizingMaskIntoConstraints="NO" id="YjA-oA-IU8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="bee3" translatesAutoresizingMaskIntoConstraints="NO" id="YjA-oA-IU8">
                                 <rect key="frame" x="77" y="318" width="260" height="260"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="HKR-0v-vQg"/>
@@ -34,11 +34,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-94" y="364"/>
         </scene>
     </scenes>
     <resources>
-        <image name="launch_preview" width="260" height="280"/>
+        <image name="bee3" width="498" height="479"/>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

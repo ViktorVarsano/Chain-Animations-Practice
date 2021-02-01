@@ -14,22 +14,22 @@ class ViewController: UIViewController {
     
     fileprivate func setupLabels() {
         //setup UI
-//        titleLabel.backgroundColor = .red
-//        bodyLabel.backgroundColor = .green
         titleLabel .numberOfLines = 0
-        titleLabel.text = "Welcome to Company XYZ"
-        titleLabel.font = UIFont(name: "Futura", size: 34)
+        titleLabel.text = "Leave us a message \n"
+        titleLabel.font = UIFont(name: "Futura", size: 58)
+        
         bodyLabel.numberOfLines = 0
-        bodyLabel.text = "Hello there! Thanks so much for downloading our brand new app and giving us a try. Make sure to give us a nice review on the AppStore"
+        bodyLabel.text = "Hello and thank you so much for downloading our brand new app! We hope you enjoy it and give us a nice review on the AppStore! Don't forget to give us feedback on what you would like to see in the future! \n\n\n Contact:\n viktor_varsano@hotmail.com"
+        bodyLabel.font = UIFont(name: "Futura", size: 22)
     }
     
     fileprivate func setupStackView() {
-        
         let stackView = UIStackView(arrangedSubviews: [titleLabel, bodyLabel])
         stackView.axis = .vertical
         stackView.spacing = 8
         view.addSubview(stackView)
-        //enables autolayout
+        
+        //enable autolayout
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -43,7 +43,6 @@ class ViewController: UIViewController {
         setupStackView()
             
         //fun animation
-        
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapAnimations)))
     }
 
@@ -58,7 +57,7 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations:  {
                 
             self.titleLabel.alpha = 0
-            self.titleLabel.transform = self.titleLabel.transform.translatedBy(x: 0, y: -200)
+            self.titleLabel.transform = self.titleLabel.transform.translatedBy(x: 0, y: -400)
                 
             })
         }
@@ -72,11 +71,10 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations:  {
               
             self.bodyLabel.alpha = 0
-            self.bodyLabel.transform = self.bodyLabel.transform.translatedBy(x: 0, y: -200)
+            self.bodyLabel.transform = self.bodyLabel.transform.translatedBy(x: 0, y: -400)
                 
             })
         }
-
         
         
         
