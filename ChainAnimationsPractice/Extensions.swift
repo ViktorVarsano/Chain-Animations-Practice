@@ -9,54 +9,55 @@ import UIKit
 
 extension UIView {
     
-    func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
+    func anchorToTop(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil) {
         
+        anchorWithConstantsToTop(top, left: left, bottom: bottom, right: right, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
+    }
+    
+    func anchorWithConstantsToTop(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0) {
+        
+        _ = anchor(top, left: left, bottom: bottom, right: right, topConstant: topConstant, leftConstant: leftConstant, bottomConstant: bottomConstant, rightConstant: rightConstant)
+    }
+    
+    func anchor(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0, widthConstant: CGFloat = 0, heightConstant: CGFloat = 0) -> [NSLayoutConstraint] {
         translatesAutoresizingMaskIntoConstraints = false
         
+        var anchors = [NSLayoutConstraint]()
+        
         if let top = top {
-            self.topAnchor.constraint(equalTo: top, constant: padding.top).isActive = true
+            anchors.append(topAnchor.constraint(equalTo: top, constant: topConstant))
         }
         
-        if let leading = leading {
-            self.leadingAnchor.constraint(equalTo: leading, constant: padding.left).isActive = true
+        if let left = left {
+            anchors.append(leftAnchor.constraint(equalTo: left, constant: leftConstant))
         }
         
         if let bottom = bottom {
-            self.bottomAnchor.constraint(equalTo: bottom, constant: -padding.bottom).isActive = true
+            anchors.append(bottomAnchor.constraint(equalTo: bottom, constant: -bottomConstant))
         }
         
-        if let trailing = trailing {
-            self.trailingAnchor.constraint(equalTo: trailing, constant: -padding.right).isActive = true
+        if let right = right {
+            anchors.append(rightAnchor.constraint(equalTo: right, constant: -rightConstant))
         }
         
-        if size.width != 0 {
-            self.widthAnchor.constraint(equalToConstant: size.width).isActive = true
+        if widthConstant > 0 {
+            anchors.append(widthAnchor.constraint(equalToConstant: widthConstant))
         }
         
-        if size.height != 0 {
-            self.heightAnchor.constraint(equalToConstant: size.height).isActive = true
+        if heightConstant > 0 {
+            anchors.append(heightAnchor.constraint(equalToConstant: heightConstant))
         }
         
-    }
-    
-    func fillSuperview(padding: UIEdgeInsets) {
-        translatesAutoresizingMaskIntoConstraints = false
-        if let superviewTopAnchor = superview?.topAnchor {
-            topAnchor.constraint(equalTo: superviewTopAnchor, constant: padding.top).isActive = true
-        }
+        anchors.forEach({$0.isActive = true})
         
-        if let superviewBottomAnchor = superview?.bottomAnchor {
-            bottomAnchor.constraint(equalTo: superviewBottomAnchor, constant: -padding.bottom).isActive = true
-        }
-        
-        if let superviewLeadingAnchor = superview?.leadingAnchor {
-            leadingAnchor.constraint(equalTo: superviewLeadingAnchor, constant: padding.left).isActive = true
-        }
-        
-        if let superviewTrailingAnchor = superview?.trailingAnchor {
-            trailingAnchor.constraint(equalTo: superviewTrailingAnchor, constant: -padding.right).isActive = true
-        }
+        return anchors
     }
     
 }
 
+
+//let pages = [
+//    Page(title: "Welcome", body: "🚀 Hello and thank you so much for downloading our brand new app! We hope you enjoy it and give us a nice review on the AppStore! 🚀"),
+//    Page(title: "Mission Statement", body: "🐝 In our company, no stone is left unturned when looking for the best solutions ⭐️ \n\n"),
+//    Page(title: "Leave us a message", body: "Don't forget to give us feedback on what you would like to see in the future! 🍯🍯🍯 \n\n\n\nContact:\n viktor_varsano@hotmail.com"),
+//]

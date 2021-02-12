@@ -9,125 +9,93 @@ import UIKit
 
 class PageCell: UICollectionViewCell {
     
-    var parentController: PageController?
-    
-    var page: Page! {
+    var page: Page? {
         didSet {
-            titleLabel.text = page.title
-            bodyLabel.text = page.body
+            
+            guard let page = page else {
+                return
+            }
+            
+            var imageName = page.imageName
+            if UIDevice.current.orientation.isLandscape {
+                imageName += "_landscape"
+            }
+            
+            imageView.image = UIImage(named: imageName)
+            
+            let color = UIColor(white: 0.2, alpha: 1)
+            
+            let attributedText = NSMutableAttributedString(string: page.title, attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.medium), convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): color]))
+            
+            attributedText.append(NSAttributedString(string: "\n\n\(page.message)", attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont.systemFont(ofSize: 14), convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): color])))
+            
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .center
+            
+            let length = attributedText.string.count
+            attributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: length))
+            
+            textView.attributedText = attributedText
         }
-    }
-
-    let stackView = UIStackView()
-    let titleLabel = UILabel()
-    let bodyLabel = UILabel()
-    let blackView = UIView()
-    
-    fileprivate func setupUI() {
-        blackView.backgroundColor = .black
-        titleLabel.text = "Quick Lists"
-        titleLabel.font = UIFont(name: "Futura", size: 44)
-        titleLabel.numberOfLines = -1
-        bodyLabel.text = "How to create a custom list under one minute"
-        bodyLabel.font = UIFont(name: "HelveticaNeue", size: 22)
-        bodyLabel.numberOfLines = -1
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(bodyLabel)
-        stackView.axis = .vertical
-        stackView.spacing = 28
-        
-        addSubview(blackView)
-        addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        stackView.widthAnchor.constraint(equalTo: widthAnchor, constant: -100).isActive = true
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupUI()
-        titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTitleTap)))
-        titleLabel.isUserInteractionEnabled = true
-        bodyLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleBodyTap)))
-        bodyLabel.isUserInteractionEnabled = true
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        
+        setupViews()
     }
     
-    @objc func handleBodyTap() {
-        titleLabel.backgroundColor = .clear
-        titleLabel.textColor = .black
-        bodyLabel.backgroundColor = .systemOrange
-        bodyLabel.textColor = .white
-    }
+    let imageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.backgroundColor = .yellow
+        iv.image = UIImage(named: "page1")
+        iv.clipsToBounds = true
+        return iv
+    }()
     
-    @objc func handleTitleTap(gesture: UITapGestureRecognizer) {
-        titleLabel.backgroundColor = .systemOrange
-        titleLabel.textColor = .white
-        bodyLabel.backgroundColor = .clear
-        bodyLabel.textColor = .black
+    let textView: UITextView = {
+        let tv = UITextView()
+        tv.text = "SAMPLE TEXT FOR NOW"
+        tv.isEditable = false
+        tv.contentInset = UIEdgeInsets(top: 24, left: 0, bottom: 0, right: 0)
+        return tv
+    }()
+    
+    let lineSeparatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        return view
+    }()
+    
+    func setupViews() {
+        addSubview(imageView)
+        addSubview(textView)
+        addSubview(lineSeparatorView)
+        
+        imageView.anchorToTop(topAnchor, left: leftAnchor, bottom: textView.topAnchor, right: rightAnchor)
+        
+        textView.anchorWithConstantsToTop(nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 16, bottomConstant: 0, rightConstant: 16)
+        
+        textView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
+        
+        lineSeparatorView.anchorToTop(nil, left: leftAnchor, bottom: textView.topAnchor, right: rightAnchor)
+        lineSeparatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc fileprivate func handleTap(gesture: UITapGestureRecognizer) {
-        let location = gesture.location(in: self)
-        if location.x < frame.width / 2 {
-            reset()
-        } else {
-            animatePageOut()
-        }
-    }
-    
-    fileprivate func animatePageOut() {
-        animateLabelOut()
-    }
+}
 
-    override func prepareForReuse() {
-        reset()
-    }
-    
-    fileprivate func animateLabelOut(up: Bool = true, completion: (() -> ())? = nil) {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-            self.titleLabel.transform = CGAffineTransform(translationX: -30, y: 0)
-        }) { (_) in
-            UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
-                self.titleLabel.alpha = 0
-                self.titleLabel.transform = CGAffineTransform(translationX: -30, y: -150 * (up ? 1 : -1))
-            }, completion: { (_) in
-                
-            })
-        }
-        
-        UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.75, options: .curveEaseOut, animations: {
-            self.bodyLabel.transform = CGAffineTransform(translationX: -30, y: 0)
-        }) { (_) in
-            self.perform(#selector(self.advance), with: nil, afterDelay: 0.3)
-            UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
-                self.bodyLabel.alpha = 0
-                self.bodyLabel.transform = CGAffineTransform(translationX: -30, y: -350 * (up ? 1 : -1))
-            }, completion: { (_) in
-                
-            })
-        }
-    }
-    
-    @objc func advance() {
-        self.parentController?.scrollToNext()
-    }
-    
-    fileprivate func reset() {
-        titleLabel.transform = .identity
-        titleLabel.alpha = 1
-        bodyLabel.transform = .identity
-        bodyLabel.alpha = 1
-        titleLabel.backgroundColor = .clear
-        titleLabel.textColor = .black
-        bodyLabel.backgroundColor = .clear
-        bodyLabel.textColor = .black
-    }
-    
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+    guard let input = input else { return nil }
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
 
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+    return input.rawValue
 }

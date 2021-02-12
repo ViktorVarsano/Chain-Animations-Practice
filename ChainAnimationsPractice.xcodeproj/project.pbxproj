@@ -3,35 +3,49 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D935686D25D674DB007F70D0 /* hello-bee.json in Resources */ = {isa = PBXBuildFile; fileRef = D935686C25D674DB007F70D0 /* hello-bee.json */; };
 		D98AA405257FDE8600188425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AA404257FDE8600188425 /* AppDelegate.swift */; };
 		D98AA407257FDE8600188425 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AA406257FDE8600188425 /* SceneDelegate.swift */; };
-		D98AA409257FDE8600188425 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AA408257FDE8600188425 /* ViewController.swift */; };
+		D98AA409257FDE8600188425 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AA408257FDE8600188425 /* LoginController.swift */; };
 		D98AA40C257FDE8600188425 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98AA40A257FDE8600188425 /* Main.storyboard */; };
 		D98AA40E257FDE8C00188425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98AA40D257FDE8C00188425 /* Assets.xcassets */; };
 		D98AA411257FDE8C00188425 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98AA40F257FDE8C00188425 /* LaunchScreen.storyboard */; };
+		D9BF8EEB25D703A0002E597D /* AnimationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF8EEA25D703A0002E597D /* AnimationCell.swift */; };
+		D9BF8EF325D708AB002E597D /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF8EF225D708AB002E597D /* MainNavigationController.swift */; };
+		D9BF8EF625D708E7002E597D /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF8EF525D708E7002E597D /* LoginCell.swift */; };
+		D9BF8EF925D70906002E597D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF8EF825D70906002E597D /* HomeController.swift */; };
+		D9BF8EFD25D7091E002E597D /* UserDefaults+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF8EFC25D7091E002E597D /* UserDefaults+helpers.swift */; };
 		D9F751AD25C938980053382D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F751AC25C938980053382D /* Extensions.swift */; };
 		D9F751B025C938DC0053382D /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F751AF25C938DC0053382D /* Page.swift */; };
 		D9F751B325C939830053382D /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F751B225C939830053382D /* PageCell.swift */; };
-		D9F751B625C939B80053382D /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F751B525C939B80053382D /* PageController.swift */; };
+		DC5FCF9DB9ECBBDDF40CAE3F /* Pods_ChainAnimationsPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93BEE5D98F957EDF4558A813 /* Pods_ChainAnimationsPractice.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A9F6CCC62B07BD1DFCF4BB0 /* Pods-ChainAnimationsPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChainAnimationsPractice.release.xcconfig"; path = "Target Support Files/Pods-ChainAnimationsPractice/Pods-ChainAnimationsPractice.release.xcconfig"; sourceTree = "<group>"; };
+		2D9855ADD5D7C3464D0951CE /* Pods-ChainAnimationsPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChainAnimationsPractice.debug.xcconfig"; path = "Target Support Files/Pods-ChainAnimationsPractice/Pods-ChainAnimationsPractice.debug.xcconfig"; sourceTree = "<group>"; };
+		93BEE5D98F957EDF4558A813 /* Pods_ChainAnimationsPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChainAnimationsPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D935686C25D674DB007F70D0 /* hello-bee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "hello-bee.json"; sourceTree = "<group>"; };
 		D98AA401257FDE8600188425 /* ChainAnimationsPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChainAnimationsPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98AA404257FDE8600188425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D98AA406257FDE8600188425 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D98AA408257FDE8600188425 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D98AA408257FDE8600188425 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		D98AA40B257FDE8600188425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D98AA40D257FDE8C00188425 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D98AA410257FDE8C00188425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D98AA412257FDE8C00188425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9BF8EEA25D703A0002E597D /* AnimationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCell.swift; sourceTree = "<group>"; };
+		D9BF8EF225D708AB002E597D /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		D9BF8EF525D708E7002E597D /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
+		D9BF8EF825D70906002E597D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		D9BF8EFC25D7091E002E597D /* UserDefaults+helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+helpers.swift"; sourceTree = "<group>"; };
 		D9F751AC25C938980053382D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D9F751AF25C938DC0053382D /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		D9F751B225C939830053382D /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
-		D9F751B525C939B80053382D /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +53,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC5FCF9DB9ECBBDDF40CAE3F /* Pods_ChainAnimationsPractice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C021AFA3D00AAF511A830ECA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93BEE5D98F957EDF4558A813 /* Pods_ChainAnimationsPractice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC34BFF719BD08C756CDA5C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2D9855ADD5D7C3464D0951CE /* Pods-ChainAnimationsPractice.debug.xcconfig */,
+				2A9F6CCC62B07BD1DFCF4BB0 /* Pods-ChainAnimationsPractice.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D98AA3F8257FDE8500188425 = {
 			isa = PBXGroup;
 			children = (
 				D98AA403257FDE8600188425 /* ChainAnimationsPractice */,
 				D98AA402257FDE8600188425 /* Products */,
+				CC34BFF719BD08C756CDA5C9 /* Pods */,
+				C021AFA3D00AAF511A830ECA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,13 +100,18 @@
 			children = (
 				D98AA404257FDE8600188425 /* AppDelegate.swift */,
 				D98AA406257FDE8600188425 /* SceneDelegate.swift */,
-				D98AA40D257FDE8C00188425 /* Assets.xcassets */,
 				D98AA412257FDE8C00188425 /* Info.plist */,
-				D9F751AC25C938980053382D /* Extensions.swift */,
-				D9F751AF25C938DC0053382D /* Page.swift */,
+				D98AA40D257FDE8C00188425 /* Assets.xcassets */,
+				D98AA408257FDE8600188425 /* LoginController.swift */,
 				D9F751B225C939830053382D /* PageCell.swift */,
-				D9F751B525C939B80053382D /* PageController.swift */,
-				D98AA408257FDE8600188425 /* ViewController.swift */,
+				D9F751AF25C938DC0053382D /* Page.swift */,
+				D9F751AC25C938980053382D /* Extensions.swift */,
+				D9BF8EF525D708E7002E597D /* LoginCell.swift */,
+				D9BF8EF225D708AB002E597D /* MainNavigationController.swift */,
+				D9BF8EF825D70906002E597D /* HomeController.swift */,
+				D9BF8EFC25D7091E002E597D /* UserDefaults+helpers.swift */,
+				D9BF8EEA25D703A0002E597D /* AnimationCell.swift */,
+				D935686C25D674DB007F70D0 /* hello-bee.json */,
 				D9F751BA25C940870053382D /* Storyboards */,
 			);
 			path = ChainAnimationsPractice;
@@ -94,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98AA415257FDE8C00188425 /* Build configuration list for PBXNativeTarget "ChainAnimationsPractice" */;
 			buildPhases = (
+				44E6EA97FA5DCD5D54C8621A /* [CP] Check Pods Manifest.lock */,
 				D98AA3FD257FDE8600188425 /* Sources */,
 				D98AA3FE257FDE8600188425 /* Frameworks */,
 				D98AA3FF257FDE8600188425 /* Resources */,
+				E5BABD36E6F93E447919A480 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,23 +188,70 @@
 				D98AA411257FDE8C00188425 /* LaunchScreen.storyboard in Resources */,
 				D98AA40E257FDE8C00188425 /* Assets.xcassets in Resources */,
 				D98AA40C257FDE8600188425 /* Main.storyboard in Resources */,
+				D935686D25D674DB007F70D0 /* hello-bee.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44E6EA97FA5DCD5D54C8621A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChainAnimationsPractice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5BABD36E6F93E447919A480 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChainAnimationsPractice/Pods-ChainAnimationsPractice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChainAnimationsPractice/Pods-ChainAnimationsPractice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChainAnimationsPractice/Pods-ChainAnimationsPractice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D98AA3FD257FDE8600188425 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98AA409257FDE8600188425 /* ViewController.swift in Sources */,
+				D98AA409257FDE8600188425 /* LoginController.swift in Sources */,
 				D98AA405257FDE8600188425 /* AppDelegate.swift in Sources */,
+				D9BF8EF325D708AB002E597D /* MainNavigationController.swift in Sources */,
 				D9F751B325C939830053382D /* PageCell.swift in Sources */,
-				D9F751B625C939B80053382D /* PageController.swift in Sources */,
+				D9BF8EF925D70906002E597D /* HomeController.swift in Sources */,
+				D9BF8EEB25D703A0002E597D /* AnimationCell.swift in Sources */,
+				D9BF8EFD25D7091E002E597D /* UserDefaults+helpers.swift in Sources */,
 				D98AA407257FDE8600188425 /* SceneDelegate.swift in Sources */,
 				D9F751AD25C938980053382D /* Extensions.swift in Sources */,
 				D9F751B025C938DC0053382D /* Page.swift in Sources */,
+				D9BF8EF625D708E7002E597D /* LoginCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +395,7 @@
 		};
 		D98AA416257FDE8C00188425 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D9855ADD5D7C3464D0951CE /* Pods-ChainAnimationsPractice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -326,6 +415,7 @@
 		};
 		D98AA417257FDE8C00188425 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A9F6CCC62B07BD1DFCF4BB0 /* Pods-ChainAnimationsPractice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
