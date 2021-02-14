@@ -14,6 +14,8 @@ class HomeController: UIViewController {
         navigationItem.title = "We're logged in"
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(handleSignOut))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Continue", style: .plain, target: self, action: #selector(continueToFirstController))
+
         
         let imageView = UIImageView(image: UIImage(named: "home"))
         view.addSubview(imageView)
@@ -25,6 +27,12 @@ class HomeController: UIViewController {
         
         let loginController = LoginController()
         present(loginController, animated: true, completion: nil)
+    }
+    
+    
+    @objc func continueToFirstController() {
+        let firstController = FirstController()
+        present(firstController, animated: true, completion: nil)
     }
     
 }

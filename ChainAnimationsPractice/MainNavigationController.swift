@@ -30,5 +30,11 @@ class MainNavigationController: UINavigationController {
         present(loginController, animated: true, completion: {
             //perhaps we'll do something here later
         })
+        
+//    @objc func showAnimationController() {
+//        let animationController = AnimationController()
+//        present(animationController, animated: true, completion: {
+//        })
+        
     }
 }

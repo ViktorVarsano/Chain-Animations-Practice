@@ -27,6 +27,7 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
     
     let cellId = "cellId"
     let loginCellId = "loginCellId"
+    let animationCellId = "animationCellId"
     
     let pages: [Page] = {
         let firstPage = Page(title: "Share a great listen", message: "It's free to send your books to the people in your life. Every recipient's first book is on us.", imageName: "page1")
@@ -170,6 +171,7 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
     fileprivate func registerCells() {
         collectionView.register(PageCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(LoginCell.self, forCellWithReuseIdentifier: loginCellId)
+        collectionView.register(AnimationCell.self, forCellWithReuseIdentifier: animationCellId)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -183,6 +185,11 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
             let loginCell = collectionView.dequeueReusableCell(withReuseIdentifier: loginCellId, for: indexPath) as! LoginCell
             loginCell.delegate = self
             return loginCell
+            
+//            let animationCell = collectionView.dequeueReusableCell(withReuseIdentifier: animationCellId, for: indexPath) as! AnimationCell
+////            animationCell.delegate = self
+//            return animationCell
+            
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PageCell

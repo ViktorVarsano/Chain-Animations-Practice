@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Lottie 
+
 
 class LoginCell: UICollectionViewCell {
     

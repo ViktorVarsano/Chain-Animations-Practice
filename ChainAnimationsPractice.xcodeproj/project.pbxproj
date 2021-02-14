@@ -19,6 +19,7 @@
 		D9BF8EF625D708E7002E597D /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF8EF525D708E7002E597D /* LoginCell.swift */; };
 		D9BF8EF925D70906002E597D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF8EF825D70906002E597D /* HomeController.swift */; };
 		D9BF8EFD25D7091E002E597D /* UserDefaults+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF8EFC25D7091E002E597D /* UserDefaults+helpers.swift */; };
+		D9BF8F2F25D91F82002E597D /* FirstController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF8F2E25D91F82002E597D /* FirstController.swift */; };
 		D9F751AD25C938980053382D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F751AC25C938980053382D /* Extensions.swift */; };
 		D9F751B025C938DC0053382D /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F751AF25C938DC0053382D /* Page.swift */; };
 		D9F751B325C939830053382D /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F751B225C939830053382D /* PageCell.swift */; };
@@ -43,6 +44,7 @@
 		D9BF8EF525D708E7002E597D /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		D9BF8EF825D70906002E597D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		D9BF8EFC25D7091E002E597D /* UserDefaults+helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+helpers.swift"; sourceTree = "<group>"; };
+		D9BF8F2E25D91F82002E597D /* FirstController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstController.swift; sourceTree = "<group>"; };
 		D9F751AC25C938980053382D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D9F751AF25C938DC0053382D /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		D9F751B225C939830053382D /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				D98AA406257FDE8600188425 /* SceneDelegate.swift */,
 				D98AA412257FDE8C00188425 /* Info.plist */,
 				D98AA40D257FDE8C00188425 /* Assets.xcassets */,
+				D9BF8F2E25D91F82002E597D /* FirstController.swift */,
 				D98AA408257FDE8600188425 /* LoginController.swift */,
 				D9F751B225C939830053382D /* PageCell.swift */,
 				D9F751AF25C938DC0053382D /* Page.swift */,
@@ -248,6 +251,7 @@
 				D9BF8EF925D70906002E597D /* HomeController.swift in Sources */,
 				D9BF8EEB25D703A0002E597D /* AnimationCell.swift in Sources */,
 				D9BF8EFD25D7091E002E597D /* UserDefaults+helpers.swift in Sources */,
+				D9BF8F2F25D91F82002E597D /* FirstController.swift in Sources */,
 				D98AA407257FDE8600188425 /* SceneDelegate.swift in Sources */,
 				D9F751AD25C938980053382D /* Extensions.swift in Sources */,
 				D9F751B025C938DC0053382D /* Page.swift in Sources */,
